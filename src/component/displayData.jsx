@@ -5,16 +5,16 @@ import Article from "./article";
 
 const DisplayData = () => {
   const { loading, post, err } = useSelector((state) => state.post);
-  const dispatch=useDispatch()
-  useEffect(()=>{
-    if(!loading)return;
+  const dispatch = useDispatch()
+  useEffect(() => {
+    if (!loading) return;
     dispatch(fetchPost())
   })
   // console.log(post);
-  
+
   return <>
-  {err && <div>{err} </div>}
-  {post && post.map(el=><Article key={el.id} el={el} />)}
+    {err && <div>{err} </div>}
+    {post && post.map(el => <Article key={el.id} el={el} />)}
   </>;
 };
 
