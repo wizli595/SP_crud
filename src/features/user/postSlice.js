@@ -57,7 +57,6 @@ const postSlice = createSlice({
       state.loading = true;
     });
     builder.addCase(updateArt.fulfilled, (state, action) => {
-      console.log(action);
       state.loading = false;
       state.post = [action.payload];
       state.err = "";
